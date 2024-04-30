@@ -1,0 +1,36 @@
+{% extends 'salary/start.html' %}
+ 
+{% block content %}
+
+<h1>Регистрация</h1>
+
+
+<form action="{{ url_for('registration_post') }}" method="post">
+  
+    <p><input name="name" placeholder="введите ФИО"></p>
+    <p><input type="email" name="email" placeholder="e-mail"></p>
+    <p><input type="password" name="password1" placeholder="Придумайте пароль"></p>
+    <p><input type="password" name="password2" placeholder="Повторите пароль"></p>
+
+    {% if password_not_strong %}    
+    <p>{{ password_not_strong }}</p>
+    {% else %}
+    <br>
+    {% endif %}
+
+    {% if password_mismatch %}    
+    <p>{{ password_mismatch }}</p>
+    {% else %}
+    <br>
+    {% endif %}
+
+    
+  <input type="submit" value="Зарегистрироваться" />
+
+</form>
+
+
+
+
+
+{% endblock %}

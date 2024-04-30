@@ -1,0 +1,14 @@
+{% extends 'salary/start.html' %}
+
+
+{% block content %}
+
+<h1>Нет такого пользователя или пользоатель не зарегистрирован!</h1>
+
+<br>
+
+<a href="{{ url_for('registration_get') }}" ><h3>Перейти к регистрации пользователя</h3></a>
+
+
+
+{% endblock %}

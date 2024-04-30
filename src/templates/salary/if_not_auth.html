@@ -1,0 +1,14 @@
+{% extends 'showcase/start.html' %}
+
+
+{% block content %}
+
+
+<h1>ВЫ НЕ АВТОРИЗОВАНЫ</h1>
+
+<br>
+
+<a href="{{ url_for('auth_get') }}" ><h3>Ссылка на страницу авторизации</h3></a>
+
+
+{% endblock %}
