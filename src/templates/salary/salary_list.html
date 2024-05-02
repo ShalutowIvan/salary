@@ -1,0 +1,14 @@
+{% extends 'salary/start.html' %}
+
+
+{% block content %}
+
+
+{% for i in salary_list %}
+
+<h3> ФИО работника: {{ i.worker.fio }} || Текущая зарплата: {{ i.worker.current_salary }} || Дата повышения: {{ i.increase_date }} || </h3>
+
+{% endfor %}
+
+
+{% endblock %}

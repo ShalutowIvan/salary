@@ -12,8 +12,6 @@ from .models import *
 from src.salary.models import *
 from src.salary.router import base_requisites
 
-# from .schemas import *
-
 from .secure import pwd_context, create_access_token, create_refresh_token, update_tokens, send_email_verify, send_email_restore_password
 
 # from jose import jwt
@@ -60,7 +58,7 @@ async def registration_post(request: Request, session: AsyncSession = Depends(ge
     user = User(name=name, email=email, hashed_password=pwd_context.hash(password1))
     
     session.add(user)
-    await session.commit() 
+    await session.commit()
 
     await send_email_verify(user=user)
 
@@ -196,7 +194,7 @@ async def restore_password_user(request: Request, session: AsyncSession = Depend
 
 
 #функция get авторизации
-@router_reg.get("/auth", response_model=None, response_class=HTMLResponse)
+@router_reg.get("/auth/", response_model=None, response_class=HTMLResponse)
 async def auth_get(request: Request, session: AsyncSession = Depends(get_async_session)):
     
     context = await base_requisites(db=session, request=request)
@@ -206,7 +204,7 @@ async def auth_get(request: Request, session: AsyncSession = Depends(get_async_s
 
 
 #функция post авторизации
-@router_reg.post("/auth", response_model=None, response_class=HTMLResponse)
+@router_reg.post("/auth/", response_model=None, response_class=HTMLResponse)
 async def auth_user(request: Request, session: AsyncSession = Depends(get_async_session), email: EmailStr = Form(), password: str = Form()):
 
     user: User = await session.scalar(select(User).where(User.email == email))#ищем пользователя по емейл
@@ -278,7 +276,7 @@ async def auth_user(request: Request, session: AsyncSession = Depends(get_async_
     
 
 #выход пользователя
-@router_reg.get("/logout")
+@router_reg.get("/logout/")
 async def logout_user(request: Request, Authorization: str | None = Cookie(default=None), RT: str | None = Cookie(default=None), session: AsyncSession = Depends(get_async_session)):
     
     context = await base_requisites(db=session, request=request)
@@ -294,3 +292,12 @@ async def logout_user(request: Request, Authorization: str | None = Cookie(defau
         response.delete_cookie("Authorization")
 
     return response
+
+
+
+
+
+
+
+
+

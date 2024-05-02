@@ -1,0 +1,28 @@
+{% extends 'salary/start.html' %}
+
+{% block content %}
+
+<br>
+
+
+<h3>Добавление даты повышения зарплаты</h3>
+
+<form action="{{ url_for('create_increase_salary_post') }}" method="post">
+ 
+<p><input type="date" name="increase_date" placeholder="Введите дату повышения работника"></p>
+<p><input type="text" name="increase_size" placeholder="Введите % повышения зарплаты"></p>
+<p><input type="text" name="worker_id" value="{{ worker.id }}"></p>
+<p><input type="text" name="user_id" value="{{ worker.user_id }}"></p>
+
+<br>
+
+<button type="submit">Добавить</button>
+
+</form>
+
+
+
+{% endblock %}
+
+
+

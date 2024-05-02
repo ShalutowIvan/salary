@@ -1,0 +1,26 @@
+{% extends 'salary/start.html' %}
+
+{% block content %}
+
+<br>
+
+
+<h3>Введите токен суперпользователя.</h3>
+
+<form action="{{ url_for('become_superuser_post') }}" method="post">
+ 
+<p><input type="text" name="token" placeholder="Введите токена суперпользователя"></p>
+
+<br>
+
+<button type="submit">Подтвердить</button>
+
+</form>
+<br>
+<a href="{{ url_for('home') }}"><h3>Вернуться на главную страницу</h3></a>
+
+
+{% endblock %}
+
+
+

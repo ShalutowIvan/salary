@@ -1,0 +1,21 @@
+{% extends 'salary/start.html' %}
+
+{% block content %}
+
+<br>
+
+
+<h2>Заполнение таблицы повышения зарплаты</h2>
+
+{% for i in worker_list %}
+
+<h3>ФИО: {{i.fio}} || специальность: {{ i.speciality }} || Зарплата: {{ i.current_salary }} || Статус: {{ i.status_work.value }} ||<a href="{{ url_for('create_increase_salary_get', id=i.id)  }}"><button>Добавить повышение</button></a></h3>
+
+{% endfor %}
+
+
+
+{% endblock %}
+
+
+

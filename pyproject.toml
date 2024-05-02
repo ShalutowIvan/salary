@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "shift-cft-task"
+version = "0.1.0"
+description = ""
+authors = ["Иван <ivan_shalutow@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["all"], version = "^0.110.2"}
+requests = "^2.31.0"
+pytest = "^8.1.1"
+pyjwt = "^2.8.0"
+sqlalchemy = "^2.0.29"
+alembic = "^1.13.1"
+asyncpg = "^0.29.0"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+bcrypt = "^4.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

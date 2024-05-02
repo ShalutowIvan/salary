@@ -1,0 +1,29 @@
+{% extends 'salary/start.html' %}
+
+{% block content %}
+
+<br>
+
+
+<h3>Добавление работника</h3>
+
+<form action="{{ url_for('create_worker_post') }}" method="post">
+ 
+<p><input type="text" name="fio" value="{{ user.name }}"></p>
+<p><input type="text" name="speciality" placeholder="Введите специальность работника"></p>
+<p><input type="text" name="current_salary" placeholder="Введите сумму зарплаты"></p>
+<p><input type="text" name="status_work" value="work"></p>
+<p><input type="text" name="user_id" value="{{ user.id }}"></p>
+
+
+<br>
+
+<button type="submit">Добавить</button>
+
+</form>
+
+
+{% endblock %}
+
+
+

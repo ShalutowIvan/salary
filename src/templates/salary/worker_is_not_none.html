@@ -1,0 +1,14 @@
+{% extends 'salary/start.html' %}
+
+
+{% block content %}
+
+
+<h1>Работник с такими данными уже создан!</h1>
+
+<br>
+
+<a href="{{ url_for('search_user_get') }}" ><h3>Вернуться к списку пользователей</h3></a>
+
+
+{% endblock %}

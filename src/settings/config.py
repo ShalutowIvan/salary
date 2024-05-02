@@ -25,6 +25,7 @@ KEY = os.environ.get("KEY")#для access токена при авторизац
 KEY2 = os.environ.get("KEY2")#для рефреш токена
 KEY3 = os.environ.get("KEY3")#для токена активации
 KEY4 = os.environ.get("KEY4")#для токена при сброе пароля
+KEY5 = os.environ.get("KEY5")#для токена при запросе суперюзера
 
 ALG = os.environ.get("ALGORITHM")
 

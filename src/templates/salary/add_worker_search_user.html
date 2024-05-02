@@ -1,0 +1,21 @@
+{% extends 'salary/start.html' %}
+
+{% block content %}
+
+<br>
+
+
+<h2>Создание работников</h2>
+
+{% for i in user_list %}
+
+<h3>ФИО: {{i.name}} || email: {{ i.email }} || <a href="{{ url_for('create_worker_get', email=i.email)  }}"><button>Добавить работника</button></a></h3>
+
+{% endfor %}
+
+
+
+{% endblock %}
+
+
+
